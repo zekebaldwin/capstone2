@@ -9,7 +9,6 @@ class User {
   /** authenticate user with username, password.
    * Returns { username, first_name, last_name, email, is_admin }
    **/
-
   static async authenticate(username, password) {
     // try to find the user first
     const result = await db.query(
@@ -33,11 +32,9 @@ class User {
 
     throw new Error("Invalid username/password");
   }
-
   /** Register user with data.
    * Returns { username, firstName, lastName, email, isAdmin }
    **/
-
   static async register(username, password) {
     const duplicateCheck = await db.query(
       `SELECT username
